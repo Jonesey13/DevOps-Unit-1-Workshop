@@ -13,7 +13,7 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 
 ### Operating the terminal
 - Open your terminal (Terminal.app on Mac, Powershell on Windows, or your favourite terminal emulator).
-> Corporate restrictions, or other technical issues? Follow this command and the rest of the workshop inside an ACG lab, follow these instructions: qq
+> Corporate restrictions, or other technical issues? Follow this command and the rest of the workshop inside an ACG cloud server, follow these instructions: [Setting up and using an ACG cloud server](ACG-instructions.md)
 - Now we're going to go over the basics. 
 
 ### Scripts, Echo
