@@ -35,3 +35,8 @@ You should now see the terminal prompt below. This is your server. You can now u
 All of the commands you expect should work will work, and it also comes with a relatively recent version of Python. You can also install other things if you need to.
 
 ![](ACG-instructions/7.png)
+
+## Step 5 (Unit 1 Workshop): Install necessary tools for Unit 1 Workshop
+
+If you're doing the Unit 1 Workshop, you'll also need to ensure you install the AWS CLI.
+Run `sudo snap install aws-cli --classic` (you'll need your password)
