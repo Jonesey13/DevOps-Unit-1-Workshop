@@ -172,7 +172,8 @@ Instead of manually filling in the blanks, you'll write a script that randomly s
 - Your script is great now, but it's only on your computer, and only you can see it (unless you share your screen with someone else). We need to deploy it to the cloud so that everyone can use it.
 - Deploying scripts and applications to the cloud is a big part of a DevOps engineer's job. We'll cover this in more detail later in the course, but for now, we'll use a simple method to deploy our script.
 - We've prepared a deployment script for you. It's called `deploy.sh`. You can use this script to deploy your `madlibs.sh` script to our server.
-- Run the deployment script by typing `bash deploy.sh` into the terminal and pressing Enter.
+    - You will need credentials for our AWS account for this. Your PDE will provide them to you.
+- Using the actual credentials provided to you, run the deployment script by entering e.g. `AWS_ACCESS_KEY_ID=123 AWS_SECRET_ACCESS_KEY=456 bash deploy.sh` (but with the actual keys) into the terminal and pressing Enter.
 - You should see a URL output to the terminal.
 - Open the URL in your web browser to see your script running in the cloud.
 - Press Refresh a few times to see different stories output to the screen.
