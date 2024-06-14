@@ -81,7 +81,7 @@ fi
 
 rm lambda_function.zip bootstrap
 
-# At
+# Attach the jq layer to our function so that it's available as a tool
 aws lambda update-function-configuration --function-name $function_name --layers arn:aws:lambda:eu-west-1:488559761265:layer:jq:2 --region $aws_region
 
 # Check if the API Gateway REST API already exists

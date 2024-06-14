@@ -45,7 +45,7 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 - Create a new file called `hello2.sh` in the terminal by typing `touch hello2.sh` and pressing Enter.
 - Open the file now in your editor:
   - Using Visual Studio Code by typing `code hello2.sh` and pressing Enter.
-  - Using your chosen text editer e.g. `nano hello2.sh` and pressing Enter.
+  - Using your chosen text editor e.g. `nano hello2.sh` and pressing Enter.
 - Add the following content to the file:
     ```bash
     greeting="Hello, World!"
@@ -69,7 +69,7 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 - Create a new file called `hello3.sh` in the terminal by typing `touch hello3.sh` and pressing Enter.
 - Open the file:
   - In Visual Studio Code by typing `code hello3.sh` and pressing Enter.
-  - Using your chosen text editer e.g. `nano hello3.sh` and pressing Enter.
+  - Using your chosen text editor e.g. `nano hello3.sh` and pressing Enter.
 - Add the following content to the file:
     ```bash
     greetings=("Hello, World" "Bonjour, le monde" "Hola, mundo" "Ciao, mondo")
@@ -129,7 +129,7 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 - Create a new file called `hello4.sh` in the terminal by typing `touch hello4.sh` and pressing Enter.
 - Open the file:
   - In Visual Studio Code by typing `code hello4.sh` and pressing Enter.
-  - Using your chosen text editer e.g. `nano hello4.sh` and pressing Enter.
+  - Using your chosen text editor e.g. `nano hello4.sh` and pressing Enter.
 - Add the following content to the file:
     ```bash
     greetings=("Hello, World" "Bonjour, le monde" "Hola, mundo" "Ciao, mondo")
@@ -213,15 +213,13 @@ Use this remote server: `https://ryi-do4_w1_stories.web.val.run/`
 
 The stories it gives you will have the following kinds of placeholders, make sure you handle them: $NAME, $ADJECTIVE, $NOUN, $VERB, $PLACE, $EMOTION, $PLURAL_NOUN, $SILLY_WORD, and $ADVERB.
 
-> Hint 1: echoing two separate results in your script will cause the app to fail, so make sure you disable the previous echo statement (potentially by commenting it out).
+> **Hint 1**: echoing two separate results in your script will cause the app to fail, so make sure you disable the previous echo statement - you may want to copy the old version (e.g. `cp madlibs.sh madlibs.sh.old`) and then replace it entirely.
 
-> Hint 2: once you have stored the response from the remote server as a variable, you'll notice it doesn't automatically expand out the variables: it still says literally `$NAME went for a walk` even if the `$NAME` variable is set.
+> **Hint 2**: once you have stored the response from the remote server as a variable, you'll notice it doesn't automatically expand out the variables: it still says literally `$NAME went for a walk` even if the `$NAME` variable is set.
 > 
 > Two approaches we might take to that are:
-> - [the `eval` command](https://man7.org/linux/man-pages/man1/eval.1p.html) which treats a string input as if it is a command
-> - [the `sed` command](https://man7.org/linux/man-pages/man1/sed.1p.html) which is a wonderful tool for replacing values in a string.
->
-> Unless you have a fantastic memory, you will likely need to look up some advice on how to use these!
+> - [the `eval` command](https://man7.org/linux/man-pages/man1/eval.1p.html) which evaluates a string input as if it is a command.
+> - [the `sed` command](https://man7.org/linux/man-pages/man1/sed.1p.html) which is a tool for replacing values in a string.
 > 
 > Have a think about the relative advantages of each - there are arguably very strong reasons to prefer one over the other!
 
