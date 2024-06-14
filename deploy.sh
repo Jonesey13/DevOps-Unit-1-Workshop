@@ -81,6 +81,9 @@ fi
 
 rm lambda_function.zip bootstrap
 
+# At
+aws lambda update-function-configuration --function-name $function_name --layers arn:aws:lambda:eu-west-1:488559761265:layer:jq:2 --region $aws_region
+
 # Check if the API Gateway REST API already exists
 api_id=$(aws apigateway get-rest-apis --query "items[?name=='U1W Madlibs ${current_date}-${lambda_id}'].id" --output text)
 
