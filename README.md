@@ -234,3 +234,4 @@ Use this remote server: `https://ryi-do4_w1_tickets.web.val.run`
 
 Use the "add" and "length" functions in `jq` to calculate the total number of story points completed in the last sprint, the total number of tickets completed in the last sprint, and maybe the average ticket size. Then, use these numbers to produce a report in your script.
 
+> Hint: your Lambda won't have jq on [the PATH](https://www.linfo.org/path_env_var.html) initially, so we'll need to extend the path to include its location in `/opt`. Start your script with `PATH=$PATH:/opt` to achieve this
