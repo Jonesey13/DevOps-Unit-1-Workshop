@@ -39,4 +39,8 @@ All of the commands you expect should work will work, and it also comes with a r
 ## Step 5 (Unit 1 Workshop): Install necessary tools for Unit 1 Workshop
 
 If you're doing the Unit 1 Workshop, you'll also need to ensure you install the AWS CLI.
-Run `sudo snap install aws-cli --classic` (you'll need your password)
+Run `sudo snap install aws-cli --classic` (you'll need your password).
+
+## Step 6 (Unit 1 Workshop): Clone the repository
+
+`git` should be pre-installed on the server, so from your home directory (which you can reach with `cd ~`) clone the code down using `git clone https://github.com/corndeladmin/DevOps-Unit-1-Workshop.git` and then enter that directory with `cd DevOps-Unit-1-Workshop`.

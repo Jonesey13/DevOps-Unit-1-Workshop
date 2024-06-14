@@ -26,7 +26,7 @@ acc_id=488559761265
 # Create or read the hidden file for the random string
 if [[ ! -f ".lambda_id" ]]; then
     echo "Creating hidden file with random ID for Lambda function"
-    echo $(LC_ALL=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 10 | head -n 1) > .lambda_id
+    echo $(LC_ALL=C head -c 1000 /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 10) > .lambda_id
 fi
 lambda_id=$(cat .lambda_id)
 
