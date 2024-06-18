@@ -2,7 +2,7 @@
 
 Welcome to the Unit 1 Workshop!
 This `README.md` file will explain what you'll be doing in this workshop.
-Start by downloading this repository to your computer. You can do this by clicking the green "Code" button and selecting "Download ZIP".
+If you will be working locally, start by downloading this repository to your computer. You can do this by clicking the green "Code" button and selecting "Download ZIP".
 Once you have the ZIP file, extract it to a location of your choice.
 Open the folder in Visual Studio Code, and you're ready to go! You can continue following the instructions in this file either inside Visual Studio Code, or on the repository page on GitHub - whichever suits you best.
 
@@ -12,7 +12,7 @@ We're going to run through the technology and skills required to execute the mai
 Let's start by returning to the terminal and getting back into the CLI headspace.
 
 ### Operating the terminal
-- Open your terminal (Terminal.app on Mac, Powershell on Windows, or your favourite terminal emulator).
+- Open your terminal (Terminal.app on Mac, WSL on Windows, or your favourite bash terminal emulator).
 > Corporate restrictions, or other technical issues? Follow this command and the rest of the workshop inside an ACG cloud server, follow these instructions: [Setting up and using an ACG cloud server](ACG-instructions.md)
 - Now we're going to go over the basics. 
 
@@ -27,8 +27,9 @@ Let's start by returning to the terminal and getting back into the CLI headspace
     - Typing `echo "Hello, World!"` into the terminal and pressing enter will output `Hello, World!` to the terminal.
 - We type commands into the terminal and press Enter to execute them. But we can also save a series of commands to a file and execute them all at once. This is called a script.
 - Create a new file called `hello.sh` in the terminal by typing `touch hello.sh` and pressing Enter.
-- Open the file in Visual Studio Code by typing `code hello.sh` and pressing Enter.
-    - Alternatively, you can take this opportunity to practice opening the file in a command-line text editor. On Mac, you can use `nano hello.sh` (or `vim`, if you know how to use it). On Windows, you can also use `nano` or `vim`, but you'll need to install it first.
+- Open the file:
+    - If you're working locally, you can do this in Visual Studio Code by typing `code hello.sh` and pressing Enter.
+    - Otherwise, you can take this opportunity to practice opening the file in a command-line text editor. On ACG or Mac, you can use `nano hello.sh` (or `vim`, if you know how to use it). On Windows, you can also use `nano` or `vim`, but you'll need to install it first.
 - Add the following content to the file:
     ```bash
     echo "Hello, World!"
@@ -42,7 +43,9 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 - We can use variables to store data in scripts.
 - We can then use these variables in our scripts.
 - Create a new file called `hello2.sh` in the terminal by typing `touch hello2.sh` and pressing Enter.
-- Open the file in Visual Studio Code by typing `code hello2.sh` and pressing Enter.
+- Open the file now in your editor:
+  - Using Visual Studio Code by typing `code hello2.sh` and pressing Enter.
+  - Using your chosen text editor e.g. `nano hello2.sh` and pressing Enter.
 - Add the following content to the file:
     ```bash
     greeting="Hello, World!"
@@ -64,7 +67,9 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 - We can use arrays to store lists of data in scripts.
 - We can then use these arrays in our scripts.
 - Create a new file called `hello3.sh` in the terminal by typing `touch hello3.sh` and pressing Enter.
-- Open the file in Visual Studio Code by typing `code hello3.sh` and pressing Enter.
+- Open the file:
+  - In Visual Studio Code by typing `code hello3.sh` and pressing Enter.
+  - Using your chosen text editor e.g. `nano hello3.sh` and pressing Enter.
 - Add the following content to the file:
     ```bash
     greetings=("Hello, World" "Bonjour, le monde" "Hola, mundo" "Ciao, mondo")
@@ -122,7 +127,9 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 - This means that not only can we generate random numbers, but we can also generate random numbers in a specific range.
 - If we choose a range of "the number of elements in an array", we can use this to randomly select an element from the array.
 - Create a new file called `hello4.sh` in the terminal by typing `touch hello4.sh` and pressing Enter.
-- Open the file in Visual Studio Code by typing `code hello4.sh` and pressing Enter.
+- Open the file:
+  - In Visual Studio Code by typing `code hello4.sh` and pressing Enter.
+  - Using your chosen text editor e.g. `nano hello4.sh` and pressing Enter.
 - Add the following content to the file:
     ```bash
     greetings=("Hello, World" "Bonjour, le monde" "Hola, mundo" "Ciao, mondo")
@@ -204,7 +211,17 @@ Use the `curl` command to fetch a story template from a remote server, and then 
 
 Use this remote server: `https://ryi-do4_w1_stories.web.val.run/`
 
-The stories it gives you will have the following kinds of placeholders, make sure you handle them: $ADJECTIVE, $NOUN, $VERB, $PLACE, $EMOTION, $PLURAL_NOUN, $SILLY_WORD, and $ADVERB.
+The stories it gives you will have the following kinds of placeholders, make sure you handle them: $NAME, $ADJECTIVE, $NOUN, $VERB, $PLACE, $EMOTION, $PLURAL_NOUN, $SILLY_WORD, and $ADVERB.
+
+> **Hint 1**: echoing two separate results in your script will cause the app to fail, so make sure you disable the previous echo statement - you may want to copy the old version (e.g. `cp madlibs.sh madlibs.sh.old`) and then replace it entirely.
+
+> **Hint 2**: once you have stored the response from the remote server as a variable, you'll notice it doesn't automatically expand out the variables: it still says literally `$NAME went for a walk` even if the `$NAME` variable is set.
+> 
+> Two approaches we might take to that are:
+> - [the `eval` command](https://man7.org/linux/man-pages/man1/eval.1p.html) which evaluates a string input as if it is a command.
+> - [the `sed` command](https://man7.org/linux/man-pages/man1/sed.1p.html) which is a tool for replacing values in a string.
+> 
+> Have a think about the relative advantages of each - there are arguably very strong reasons to prefer one over the other!
 
 ### Extension B: 
 We've built something fun today, but really all of the same setup and tools can be used to generate a wide range of things, including notices for when you need to leave home to get to the train station for your train, or a report on how many tickets and story points your teams have completed in the last sprint.
@@ -215,3 +232,4 @@ Use this remote server: `https://ryi-do4_w1_tickets.web.val.run`
 
 Use the "add" and "length" functions in `jq` to calculate the total number of story points completed in the last sprint, the total number of tickets completed in the last sprint, and maybe the average ticket size. Then, use these numbers to produce a report in your script.
 
+> Hint: your Lambda won't have jq on [the PATH](https://www.linfo.org/path_env_var.html) initially, so we'll need to extend the path to include its location in `/opt`. Start your script with `PATH=$PATH:/opt` to achieve this

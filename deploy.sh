@@ -26,7 +26,7 @@ acc_id=488559761265
 # Create or read the hidden file for the random string
 if [[ ! -f ".lambda_id" ]]; then
     echo "Creating hidden file with random ID for Lambda function"
-    echo $(LC_ALL=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 10 | head -n 1) > .lambda_id
+    echo $(LC_ALL=C head -c 1000 /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 10) > .lambda_id
 fi
 lambda_id=$(cat .lambda_id)
 
@@ -80,6 +80,9 @@ else
 fi
 
 rm lambda_function.zip bootstrap
+
+# Attach the jq layer to our function so that it's available as a tool
+aws lambda update-function-configuration --function-name $function_name --layers arn:aws:lambda:eu-west-1:488559761265:layer:jq:2 --region $aws_region
 
 # Check if the API Gateway REST API already exists
 api_id=$(aws apigateway get-rest-apis --query "items[?name=='U1W Madlibs ${current_date}-${lambda_id}'].id" --output text)
