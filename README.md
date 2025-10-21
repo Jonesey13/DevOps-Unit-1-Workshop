@@ -1,4 +1,4 @@
-# Alex's Unit 1 Workshop
+# Open Sep 25 Unit 1 Workshop
 
 Welcome to the Unit 1 Workshop!
 This `README.md` file will explain what you'll be doing in this workshop.
