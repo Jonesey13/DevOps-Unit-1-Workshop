@@ -13,7 +13,7 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 
 ### Operating the terminal
 - Open your terminal (Terminal.app on Mac, WSL on Windows, or your favourite bash terminal emulator).
-> Corporate restrictions, or other technical issues? Follow this command and the rest of the workshop inside an ACG cloud server, follow these instructions: [Setting up and using an ACG cloud server](ACG-instructions.md)
+> Corporate restrictions, or other technical issues? Follow this command and the rest of the workshop inside an Pluralsight cloud server, follow these instructions: [Setting up and using an Pluralsight cloud server](Pluralsight-instructions.md)
 - Now we're going to go over the basics. 
 
 ### Scripts, Echo
@@ -29,7 +29,7 @@ Let's start by returning to the terminal and getting back into the CLI headspace
 - Create a new file called `hello.sh` in the terminal by typing `touch hello.sh` and pressing Enter.
 - Open the file:
     - If you're working locally, you can do this in Visual Studio Code by typing `code hello.sh` and pressing Enter.
-    - Otherwise, you can take this opportunity to practice opening the file in a command-line text editor. On ACG or Mac, you can use `nano hello.sh` (or `vim`, if you know how to use it). On Windows, you can also use `nano` or `vim`, but you'll need to install it first.
+    - Otherwise, you can take this opportunity to practice opening the file in a command-line text editor. On Pluralsight or Mac, you can use `nano hello.sh` (or `vim`, if you know how to use it). On Windows, you can also use `nano` or `vim`, but you'll need to install it first.
 - Add the following content to the file:
     ```bash
     echo "Hello, World!"
